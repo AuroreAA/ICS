@@ -48,7 +48,7 @@ Note also that \code{ics2} makes hardly any input checks.
 an object of class \code{ics2} inheriting from class \code{ics}.
 }
 \references{
-\cite{Tyler, D.E., Critchley, F., \enc{Dümbgen}{Duembgen}, L. and Oja, H. (2009), Invariant co-ordinate selecetion, \emph{Journal of the Royal Statistical Society},Series B, \bold{71},  549--592. <doi:10.1111/j.1467-9868.2009.00706.x>.}
+\cite{Tyler, D.E., Critchley, F., \enc{Duembgen}{Duembgen}, L. and Oja, H. (2009), Invariant co-ordinate selecetion, \emph{Journal of the Royal Statistical Society},Series B, \bold{71},  549--592. <doi:10.1111/j.1467-9868.2009.00706.x>.}
 
 \cite{Nordhausen, K., Oja, H. and Ollila, E. (2011), Multivariate Models and the First Four Moments, In Hunter, D.R., Richards, D.S.R. and Rosenberger, J.L. (editors) "Nonparametric Statistics and Mixture Models:  A Festschrift in Honor of Thomas P. Hettmansperger", 267--287, World Scientific, Singapore. <doi:10.1142/9789814340564_0016>.}
 

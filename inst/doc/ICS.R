@@ -1,5 +1,4 @@
 ### R code from vignette source 'ICS.Rnw'
-### Encoding: ISO8859-1
 
 ###################################################
 ### code chunk number 1: ICS.Rnw:693-694

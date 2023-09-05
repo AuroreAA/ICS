@@ -1,21 +1,11 @@
 citHeader("To cite ICS in publications use:")
 
-citEntry(entry = "Article",
-  title        = "Tools for Exploring Multivariate Data: The Package {ICS}",
-  author       = personList(as.person("Klaus Nordhausen"),
-                   as.person("Hannu Oja"),
-                   as.person("David E. Tyler")),
-  journal      = "Journal of Statistical Software",
-  year         = "2008",
-  volume       = "28",
-  number       = "6",
-  pages	       = "1--31",		
-  url          = "http://www.jstatsoft.org/v28/i06/",
+bibentry(bibtype = "Article",
+         title = "Tools for Exploring Multivariate Data: The Package {ICS}",
+         author = c(person(c("Klaus"), "Nordhausen"),
+                    person(c("Hannu"), "Oja"),
+                    person(c("David", "E."), "Tyler")),
+         year = "2008", journal = "Journal of Statistical Software", volume = "28", number = "6", pages="1--31",
+         doi = "10.18637/jss.v028.i06")
 
-  textVersion  =
-  paste("Klaus Nordhausen, Hannu Oja, David E. Tyler (2008).",
-        "Tools for Exploring Multivariate Data: The Package ICS.",
-        "Journal of Statistical Software, 28(6), 1-31.",
-        "URL http://www.jstatsoft.org/v28/i06/.")
-)
 

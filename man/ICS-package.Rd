@@ -14,8 +14,8 @@ Besides generic functions to create and work with an \code{ics} object the packa
 \tabular{ll}{
 Package: \tab ICS\cr
 Type: \tab Package\cr
-Version: \tab 1.3-1\cr
-Date: \tab 2018-03-02\cr
+Version: \tab 1.3-2\cr
+Date: \tab 2023-05-29\cr
 License: \tab GPL (>= 2)\cr
 }
 Some multivariate tests and estimates are not affine equivariant by nature. A possible remedy for the lack of that property is to transform the data points to an invariant coordinate system,
@@ -34,7 +34,7 @@ scatter matrices which can be used in the \code{ics} and \code{ics2} functions. 
 Klaus Nordhausen, Hannu Oja and David E. Tyler
 
 Maintainer: 
-Klaus Nordhausen, \email{klaus.nordhausen@tuwien.ac.at}
+Klaus Nordhausen, \email{klaus.k.nordhausen@jyu.fi}
 }
 
 \keyword{package}
