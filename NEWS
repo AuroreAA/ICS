@@ -3,7 +3,7 @@ LOG of the CHANGES in the package ICS
 Version 1.4-0
 
 * changing the maintainer email address and welcoming new contributors to the package
-* complete new implementation of ICS that uses S3 classes and methods and that supports different algorithms. From now on function ICS should be used and functions ics and ics2 are deprecated.
+* complete new implementation of ICS that uses S3 classes and methods and that supports different algorithms. From now on function ICS should be used and functions ics and ics2 are to be avoided.
 
 Version 1.3-2
 
