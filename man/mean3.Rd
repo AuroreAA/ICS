@@ -16,7 +16,7 @@ mean3(X, na.action = na.fail)
           contain 'NA's.  Default is to fail. }
 }
 \details{
-  This Location Estimate is defined for \eqn{n \times p}{n x p} matrix X as
+  This location estimate is defined for a \eqn{n \times p}{n x p} matrix X as
   \deqn{ \frac{1}{p} ave_{i}\{[(x_{i}-\bar{x})S^{-1}(x_{i}-\bar{x})'] x_{i}\},}{%
    1/p ave{[(x_i-x_bar)S^{-1}(x_i-x_bar)'] x_i},}
   where \eqn{\bar{x}}{x_bar} is the mean vector and \eqn{S}{S} the regular covariance matrix.
@@ -24,7 +24,7 @@ mean3(X, na.action = na.fail)
 \value{
  A vector.
 }
-\references{\cite{Oja, H., \enc{Sirkiä}{Sirkia}, S. and Eriksson, J. (2006), Scatter matrices and independent component analysis, \emph{Austrian Journal of Statistics}, \bold{35},  175--189.}}
+\references{\cite{Oja, H., \enc{Sirki?}{Sirkia}, S. and Eriksson, J. (2006), Scatter matrices and independent component analysis, \emph{Austrian Journal of Statistics}, \bold{35},  175--189.}}
 \author{Klaus Nordhausen}
 
 \examples{

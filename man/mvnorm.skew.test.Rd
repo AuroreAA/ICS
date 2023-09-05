@@ -3,8 +3,8 @@
 
 \title{ Test of Multivariate Normality Based on Skewness}
 \description{
-  Test for multivariate normality which uses as criterion the skewness measured as the difference between
-  location estimates based on first respectively third moments 
+  Test for multivariate normality that uses as criterion the skewness measured as the difference between
+  location estimates based on first respectively third moments
 }
 \usage{
 mvnorm.skew.test(X, na.action = na.fail)

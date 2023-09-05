@@ -1,3 +1,4 @@
+#' @export
 ics2 <- function (X, S1 = MeanCov, S2 = Mean3Cov4, S1args = list(), S2args = list(), na.action = na.fail)
 {
     X <- na.action(X)

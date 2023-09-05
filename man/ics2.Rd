@@ -7,8 +7,8 @@
 Two Scatter Matrices ICS Transformation Augmented by Two Location Estimates
 }
 \description{
-This function implements the two scatter matrices transformation to obtain an invariant coordinate sytem or independent 
-  components, depending on the underlying assumptions. Differently to \code{\link{ics}} here are also two location functionals used
+This function implements the two scatter matrices transformation to obtain an invariant coordinate sytem or independent
+  components, depending on the underlying assumptions. Differently to \code{\link{ics}} here, there are also two location functionals used
   to fix the signs of the components and to get a measure of skewness.
 }
 \usage{
@@ -35,11 +35,11 @@ the second element. This means most multivariate location - scatter functions ca
 
 The invariant coordinates Z are then computed such that
 (i)   T1(Z) = 0, the origin.
-(ii)  S1(Z) = I_p, the identity matrix. 
-(iii) T2(Z) = S, where S is a vector having positive elements and can be seen as a generalized skewness measure (gSkew).
+(ii)  S1(Z) = I_p, the identity matrix.
+(iii) T2(Z) = S, where S is a vector having positive elements which can be seen as a generalized skewness measure (gSkew).
 (iv)  S2(Z) = D, a diagonal matrix with descending elements which can be seen as a generalized kurtosis measure (gKurt).
 
-Hence in this function there are no options to standardize Z or the transformation matrix B as everything is 
+Hence in this function there are no options to standardize Z or the transformation matrix B as everything is
 specified by \code{S1} and \code{S2}.
 
 Note also that \code{ics2} makes hardly any input checks.
@@ -47,8 +47,11 @@ Note also that \code{ics2} makes hardly any input checks.
 \value{
 an object of class \code{ics2} inheriting from class \code{ics}.
 }
+\note{
+Function \code{ics2()} reached the end of its lifecycle, please use \code{\link[=ICS-S3]{ICS}()} instead. In future versions, \code{ics2()} will be deprecated and eventually removed.
+}
 \references{
-\cite{Tyler, D.E., Critchley, F., \enc{Duembgen}{Duembgen}, L. and Oja, H. (2009), Invariant co-ordinate selecetion, \emph{Journal of the Royal Statistical Society},Series B, \bold{71},  549--592. <doi:10.1111/j.1467-9868.2009.00706.x>.}
+\cite{Tyler, D.E., Critchley, F., \enc{Dümbgen}{Duembgen}, L. and Oja, H. (2009), Invariant co-ordinate selecetion, \emph{Journal of the Royal Statistical Society},Series B, \bold{71},  549--592. <doi:10.1111/j.1467-9868.2009.00706.x>.}
 
 \cite{Nordhausen, K., Oja, H. and Ollila, E. (2011), Multivariate Models and the First Four Moments, In Hunter, D.R., Richards, D.S.R. and Rosenberger, J.L. (editors) "Nonparametric Statistics and Mixture Models:  A Festschrift in Honor of Thomas P. Hettmansperger", 267--287, World Scientific, Singapore. <doi:10.1142/9789814340564_0016>.}
 
@@ -59,7 +62,7 @@ Klaus Nordhausen
 
 
 \seealso{
- \code{\link{ics}}
+  \code{\link[=ICS-S3]{ICS}}
 }
 \examples{
  set.seed(123456)
@@ -70,15 +73,15 @@ Klaus Nordhausen
  X.comps <- rbind(X1,X2,X3)
  A <- matrix(rnorm(64),nrow=8)
  X <- X.comps \%*\% t(A)
- 
+
  # the default
  ics2.X.1 <- ics2(X2)
  summary(ics2.X.1)
- 
+
  # using another function as S2 not with its default
  ics2.X.2 <- ics2(X2, S2 = tM, S2args = list(df = 2))
  summary(ics2.X.2)
- 
+
  # computing in advance S2 and using another S1
  Scauchy <- tM(X)
  ics2.X.2 <- ics2(X2, S1 = tM, S2 = Scauchy, S1args = list(df = 5))

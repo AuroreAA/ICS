@@ -6,7 +6,7 @@
 
 \title{Fitted Values of an ICS Object}
 \description{
-  Function to compute the fitted values of a \code{ics} object.
+  Computes the fitted values of an \code{ics} object.
 }
 \usage{
 \S4method{fitted}{ics}(object,index=NULL)
@@ -37,7 +37,7 @@
     ics.X.1 <- ics(X)
     fitted(ics.X.1)
     fitted(ics.X.1,index=c(1,2,3,6,7,8))
-    
+
     rm(.Random.seed)
 }
 

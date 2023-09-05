@@ -1,3 +1,4 @@
+#' @export
 scovq <- function(x,y,q1=0,q2=0.5, pos=TRUE, type=7, method = "unbiased", na.action=na.fail, check=TRUE)
     {
     if (check){
@@ -18,5 +19,5 @@ scovq <- function(x,y,q1=0,q2=0.5, pos=TRUE, type=7, method = "unbiased", na.act
     if(!pos) wt.y <- 1 - wt.y
     wt.y <- wt.y/mean(wt.y)
     cov.wt(x, wt.y, method=method)$cov
-    } 
- 
+    }
+

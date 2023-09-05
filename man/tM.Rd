@@ -3,11 +3,11 @@
 
 \title{ Joint M-estimation of Location and Scatter for a Multivariate t-distribution }
 \description{
-  The functions implements three EM algorithms to M-estimate the location vector and scatter matrix of a multivariate t-distribution.
+  Implements three EM algorithms to M-estimate the location vector and scatter matrix of a multivariate t-distribution.
 }
 \usage{
-tM(X, df = 1, alg = "alg3", mu.init = NULL, V.init = NULL, 
-        gamma.init = NULL, eps = 1e-06, maxiter = 100, 
+tM(X, df = 1, alg = "alg3", mu.init = NULL, V.init = NULL,
+        gamma.init = NULL, eps = 1e-06, maxiter = 100,
         na.action = na.fail)
 }
 
@@ -24,13 +24,13 @@ tM(X, df = 1, alg = "alg3", mu.init = NULL, V.init = NULL,
           contain 'NA's.  Default is to fail.}
 }
 \details{
-  This implements the EM algorithms described in Kent et al. (1994). The norm used to define convergence is as in Arslan et al. (1995).
-  
+  This function implements the EM algorithms described in Kent et al. (1994). The norm used to define convergence is as in Arslan et al. (1995).
+
   Algorithm 1 is valid for all degrees of freedom \code{df} > 0. Algorithm 2 is well defined only for degrees of freedom \code{df} > 1.
   Algorithm 3 is the limiting case of Algorithm 2 with degrees of freedom \code{df} = 1.
-  
+
   The performance of the algorithms are compared in Arslan et al. (1995).
-  
+
   Note that \code{\link[MASS]{cov.trob}} in the MASS package implements also a covariance estimate for a multivariate t-distribution.
   That function provides for example also the possibility to fix the location. It requires however that the degrees of freedom exceeds 2.
 }
@@ -42,11 +42,11 @@ tM(X, df = 1, alg = "alg3", mu.init = NULL, V.init = NULL,
   \item{iter }{number of iterations.}
 }
 
-\references{ \cite{Kent, J.T., Tyler, D.E. and Vardi, Y. (1994),  A curious likelihood identity for the multivariate t-distribution, \emph{Communications in Statistics, Simulation and Computation}, \bold{23},  441--453. 
+\references{ \cite{Kent, J.T., Tyler, D.E. and Vardi, Y. (1994),  A curious likelihood identity for the multivariate t-distribution, \emph{Communications in Statistics, Simulation and Computation}, \bold{23},  441--453.
              <doi:10.1080/03610919408813180>. }
 
             \cite{Arslan, O., Constable, P.D.L.  and Kent, J.T. (1995), Convergence behaviour of the EM algorithm for the multivariate t-distribution, \emph{Communications in Statistics, Theory and Methods}, \bold{24}, 2981--3000. <doi:10.1080/03610929508831664>.}}
-            
+
 \author{Klaus Nordhausen}
 
 \seealso{  \code{\link[MASS]{cov.trob}} }

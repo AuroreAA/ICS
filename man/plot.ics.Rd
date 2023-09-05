@@ -6,7 +6,7 @@
 \alias{plot,ics,missing-method}
 \title{Scatterplot for a ICS Object}
 \description{
-  Scatterplot matrix for a \code{ics} object.
+  Scatterplot matrix for an \code{ics} object.
 }
 \usage{
 \S4method{plot}{ics,missing}(x, index = NULL, ...)
@@ -19,7 +19,7 @@
 }
 \details{
   If no index vector is given the function plots the full scatterplots matrix only if there are less than seven components.
-  Otherwise the three first and three last components will be plotted. 
+  Otherwise the three first and three last components will be plotted.
   This is because the components with extreme kurtosis are the most interesting ones.
 }
 

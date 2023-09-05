@@ -4,9 +4,9 @@
 \alias{coef-method}
 \alias{coef,ics-method}
 
-\title{Extracting the Unmixing Matrix}
+\title{To extract the Unmixing Matrix}
 \description{
-  Function to extract the unmixing matrix of an class \code{ics} object.
+  Extracts the unmixing matrix of a class \code{ics} object.
 }
 \usage{
 \S4method{coef}{ics}(object)
@@ -15,7 +15,7 @@
   \item{object}{object of class \code{ics}.}
 }
 \value{
-  The unmixing matrix of an class \code{ics} object.
+  The unmixing matrix of a class \code{ics} object.
 }
 
 \author{Klaus Nordhausen}

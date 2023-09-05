@@ -99,23 +99,23 @@
 ### function to compute the location and scatter for a multivariate t-distribution
 ### for a given degree of freedom
 ### is basically a wrapper around the subroutines .alg1, .alg2 and .alg3
-
+#' @export
 tM<-function(X,df=1,alg="alg3",mu.init=NULL,V.init=NULL,gamma.init=NULL,eps=1e-06,maxiter=100, na.action=na.fail)
     {
     X<-na.action(X)
     X<-as.matrix(X)
     if (is.null(mu.init)) mu.init<-colMeans(X)
     if (is.null(V.init)) V.init<-cov(X)
-    
+
     alg <- match.arg(alg,c("alg1","alg2","alg3"))
-    
+
     if (alg!="alg2") if (!is.null(gamma.init)) warning("A initial value for gamma is only for alg2 needed")
     if (is.null(gamma.init)) gamma.init<-1
-    res <-  switch(alg, 
+    res <-  switch(alg,
                 "alg1"=.alg1(X,mu.init=mu.init,V.init=V.init,nu=df,eps=eps,maxiter=maxiter),
                 "alg2"=.alg2(X,mu.init=mu.init,V.init=V.init,nu=df,gamma.init=gamma.init,eps=eps,maxiter=maxiter),
                 "alg3"=.alg3(X,mu.init=mu.init,V.init=V.init,nu=df,eps=eps,maxiter=maxiter)
                 )
     return(res)
     }
-    
+

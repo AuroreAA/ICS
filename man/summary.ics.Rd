@@ -4,7 +4,7 @@
 %\alias{summary-method}
 \alias{summary,ics-method}
 
-\title{Summarize a ICS object}
+\title{To summarize an ICS object}
 \description{
   Summarizes and prints a \code{ics} object in an informative way.
 }

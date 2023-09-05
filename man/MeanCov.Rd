@@ -4,7 +4,7 @@
 \title{Mean Vector and Covariance Matrix}
 
 \description{
-The function returns for some multivariate data the mean vector and covariance matrix.
+Returns, for some multivariate data, the mean vector and covariance matrix.
 }
 \usage{
 MeanCov(x)
@@ -24,7 +24,7 @@ A list containing:
 \author{Klaus Nordhausen}
 
 \seealso{
-\code{\link{colMeans}}, \code{\link{cov}} 
+\code{\link{colMeans}}, \code{\link{cov}}
 }
 \examples{
 X <- rmvnorm(200, 1:3, diag(2:4))

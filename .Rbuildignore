@@ -1,0 +1,7 @@
+^renv$
+^renv\.lock$
+^ICS\.Rproj$
+^\.Rproj\.user$
+dev/*
+^\.github$
+^README\.Rmd$

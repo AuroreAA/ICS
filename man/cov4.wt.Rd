@@ -6,14 +6,14 @@
  Estimates the weighted scatter matrix based on the 4th moments of the data.
 }
 \usage{
-cov4.wt(x, wt = rep(1/nrow(x), nrow(x)), location = TRUE, 
+cov4.wt(x, wt = rep(1/nrow(x), nrow(x)), location = TRUE,
         method = "ML", na.action = na.fail)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{numeric data matrix or dataframe.}
   \item{wt}{numeric vector of non-negative weights. At least some weights must be larger than zero.}
-  \item{location}{\code{TRUE} if the weighted location vector should be computed. \code{FALSE} when taken wrt to the origin.  If numeric 
+  \item{location}{\code{TRUE} if the weighted location vector should be computed. \code{FALSE} when taken wrt to the origin.  If numeric
             the matrix is computed wrt to the given location.}
   \item{method}{Either \code{ML} or \code{unbiased}. Will be passed on to \code{\link{cov.wt}} when the Mahalanobis distance is computed.}
   \item{na.action}{a function which indicates what should happen when the data
@@ -23,12 +23,12 @@ cov4.wt(x, wt = rep(1/nrow(x), nrow(x)), location = TRUE,
   If \code{location = TRUE}, then the scatter matrix is given for a \eqn{n \times p}{n x p} data matrix X by
   \deqn{\frac{1}{p+2} ave_{i}\{w_i[(x_{i}-\bar{x}_w)S_w^{-1}(x_{i}-\bar{x}_w)'](x_{i}-\bar{x}_w)'(x_{i}-\bar{x}_w)\},}{%
    1/(p+2) ave{w_i[(x_i-x_bar)S^{-1}(x_i-x_bar)'] (x_i-x_bar)'(x_i-x_bar)},}
-  where \eqn{w_i}{w_i} are the weights standardized such that \eqn{\sum{w_i}=1}{sum(w_i)=1}, 
+  where \eqn{w_i}{w_i} are the weights standardized such that \eqn{\sum{w_i}=1}{sum(w_i)=1},
   \eqn{\bar{x}_w}{x_bar} is the weighted mean vector and \eqn{S_w}{S} the weighted covariance matrix.
   For details about the weighted mean vector and weighted covariance matrix see \code{\link{cov.wt}}.
 }
 \value{
-  A matrix.
+  A matrix containing the estimated weighted fourth moments scatter.
 }
 
 \author{Klaus Nordhausen}

@@ -7,5 +7,3 @@ bibentry(bibtype = "Article",
                     person(c("David", "E."), "Tyler")),
          year = "2008", journal = "Journal of Statistical Software", volume = "28", number = "6", pages="1--31",
          doi = "10.18637/jss.v028.i06")
-
-

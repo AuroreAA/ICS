@@ -4,7 +4,7 @@
 
 \alias{summary,ics2-method}
 
-\title{Summarize a ICS2 object}
+\title{To summarize an ICS2 object}
 \description{
   Summarizes and prints a \code{ics2} object in an informative way.
 }

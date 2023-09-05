@@ -3,6 +3,7 @@
 ### class definition
 ###
 ###
+#' @export
 setClass("ics",representation(gKurt="numeric", UnMix="matrix", S1="matrix", S2="matrix", S1name="character", S2name="character",
          Scores="data.frame", DataNames="character", StandardizeB="character", StandardizegKurt="logical"))
 
@@ -25,12 +26,12 @@ setValidity("ics",function(object){
     if(length(object@gKurt)!=dim(object@Scores)[2]) return("length of 'gKurt' must correspond to the number of columns of 'Scores'")
     if(length(object@gKurt)!=length(object@DataNames)) return("length of 'gKurt' must be the same as length of 'DataNames'")
     if(length(object@gKurt)<2) return("at least bivariate data is needed")
-    
+
     if(!is(object@StandardizegKurt, "logical") || length(object@StandardizegKurt)!=1) return("slot 'StandardizegKurt' of a ics object must be 'TRUE' or 'FALSE'")
-    
+
     if(!(is(object@S1, "matrix") )) return("slot 'S1' of a ics object must be a numeric matrix")
     if(!(is.numeric(object@S1) )) return("slot 'S1' of a ics object must be a numeric matrix")
-    
+
     if(!(is(object@S2, "matrix") )) return("slot 'S2' of a ics object must be a numeric matrix")
     if(!(is.numeric(object@S2) )) return("slot 'S2' of a ics object must be a numeric matrix")
     return(TRUE)
@@ -40,14 +41,14 @@ setValidity("ics",function(object){
 ### only general kurtosis and unmixing matrix as output
 ###
 
-
+#' @export
 setMethod("show",signature(object="ics"),
 function(object)
     {
     tmp <- list(gKurt=object@gKurt,
                 UnMix=object@UnMix)
     print(tmp, quote = FALSE)
-    invisible(tmp)  
+    invisible(tmp)
     }
 )
 
@@ -55,7 +56,8 @@ function(object)
 ### plot method for an ics object
 ### -> scatterplot matrix, for larger matrices only first and last 3 coordinates are plotted
 ###
-
+#' @export
+#' @importFrom graphics pairs
 setMethod("plot",signature(x="ics",y="missing"),
 function(x,index=NULL,...)
     {
@@ -70,12 +72,12 @@ function(x,index=NULL,...)
 ### summary method for an ics object
 ### -> more detailed, nicer output than print
 ###
-
+#' @export
 setMethod("summary",signature(object="ics"),
 function(object,digits=4)
-    {   
+    {
     cat("\nICS based on two scatter matrices \n")
-    cat("S1: ", object@S1name) 
+    cat("S1: ", object@S1name)
     cat("\nS2: ",object@S2name)
     cat("\n")
     cat("\nThe generalized kurtosis measures of the components are:\n")
@@ -90,7 +92,7 @@ function(object,digits=4)
 ### fitted method for an ics object
 ### only of interest if index is used.
 ### Otherwise returns just the original data
-
+#' @export
 setMethod("fitted",signature(object="ics"),
 function(object, index=NULL)
     {
@@ -105,8 +107,8 @@ function(object, index=NULL)
 
 ### coef method for an ics object
 ### extracts the unmixing matrix
-### 
-
+###
+#' @export
 setMethod("coef",signature(object="ics"),
 function(object)
     {
