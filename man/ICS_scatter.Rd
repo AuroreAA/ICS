@@ -126,7 +126,7 @@ Simulation and Computation}, \bold{23}(2), 441--453.
 
 Oja, H., Sirkia, S. and Eriksson, J. (2006) Scatter Matrices and Independent
 Component Analysis. \emph{Austrian Journal of Statistics}, \bold{35}(2&3),
-175-189. \doi{10.17713/ajs.v35i2&3.364}.
+175-189.
 
 Tyler, D.E., Critchley, F., Duembgen, L. and Oja, H. (2009) Invariant
 Co-ordinate Selection. \emph{Journal of the Royal Statistical Society,
