@@ -1243,7 +1243,7 @@ to_ICS_scatter.matrix <- function(object, label, ...) {
 #            can also have a component 'label'
 # label .... typically constructed beforehand via deparse(substitute()) and
 #            ignored if the list already has a component 'label'
-to_ICS_scatter.list <- function(object, label) {
+to_ICS_scatter.list <- function(object, label, ...) {
   # check that list has a component 'scatter'
   scatter <- object$scatter
   if (is.null(scatter)) {
