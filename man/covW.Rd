@@ -23,17 +23,17 @@ Estimates the scatter matrix based on one-step M-estimator using mean and covari
 }
 \details{
 It is given for \eqn{n \times p} matrix \eqn{X} by
-\deqn{COV_{w}(X)=\frac{1}{n} \text{cf} \sum_{i=1}^n w(D^2(x_i))
+\deqn{COV_{w}(X)=\frac{1}{n} {cf} \sum_{i=1}^n w(D^2(x_i))
 (x_i - \bar{ x})^\top(x_i - \bar{ x}),}
 where \eqn{\bar{x}} is the mean vector, \eqn{D^2(x_i)} is the squared
 Mahalanobis distance, \eqn{w(d)=d^\alpha} is a
-non-negative and continuous weight function and \eqn{\text{cf}} is a consistency factor.
+non-negative and continuous weight function and \eqn{{cf}} is a consistency factor.
 Note that the consistency factor, which makes the estimator consistent at the multivariate normal distribution, is in most case unknown and therefore the default is to use simply \code{cf = 1}.
 \itemize{
 \item If \eqn{w(d)=1}, we get the covariance matrix \code{\link[=cov]{cov()}} (up to the factor
 \eqn{1/(n-1)} instead of \eqn{1/n}).
 \item If \eqn{\alpha=-1}, we get the \code{\link[=covAxis]{covAxis()}}.
-\item If \eqn{\alpha=1}, we get the \code{\link[=cov4]{cov4()}} with \eqn{\text{cf} = \frac{1}{p+2}}.
+\item If \eqn{\alpha=1}, we get the \code{\link[=cov4]{cov4()}} with \eqn{{cf} = \frac{1}{p+2}}.
 }
 }
 \examples{

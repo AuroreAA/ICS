@@ -104,18 +104,20 @@ test_that("ics - ICS eigenvalues - S1 and S2 are matrices/ICS_scatter", {
 
 
 ## QR ----------------------------------------------------------------------
+# It requires LAPACK version "3.11.0"
 test_that("ics - ICS eigenvalues - S1 and S2 are functions - QR", {
   X <- iris[,1:4]
 
   # ICS with QR
+
   out_ics <- ics(scale(X, center = TRUE, scale = FALSE),
                  S1 = cov, S2 = cov4, stdB = "Z", stdKurt = FALSE)
   out_ics2 <- ics2(X, S1 = MeanCov, S2 = Mean3Cov4)
   out_ICS <- ICS(X, S1 = ICS_cov, S2 =  ICS_covW,
                  S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)))
   out_ICS_QR <- ICS(X, S1 = ICS_cov, S2 =  ICS_covW,
-                 S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)),
-                 algorithm = "QR", center = TRUE, fix_signs = "scores")
+                    S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)),
+                    algorithm = "QR", center = TRUE, fix_signs = "scores")
 
   # Order of columns in W matrix matches order in data matrix
   # (since QR algorithm uses column pivoting)
@@ -138,24 +140,26 @@ test_that("ics2 - S1 and S2 are functions - QR", {
                     S2 = Mean3Cov4)@gKurt)
 
   expect_error(ICS(X_rank_deficient, S1 = ICS_cov, S2 =  ICS_covW,
-                    S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "standard")$gen_kurtosis)
+                   S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "standard")$gen_kurtosis)
 
+  # ICS with QR
+  if(La_version() == "3.10.0"){
+    expect_true(sum(ICS(X_rank_deficient, S1 = ICS_cov, S2 =  ICS_covW,
+                        S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "whiten")$gen_kurtosis !=
+                      ICS(X_rank_deficient, S1 = ICS_cov,
+                          S2 =  ICS_covW,
+                          S2_args = list(alpha = 1,
+                                         cf = 1/(ncol(X)+2)),
+                          algorithm = "QR")$gen_kurtosis) >= 1)
 
-  expect_true(sum(ICS(X_rank_deficient, S1 = ICS_cov, S2 =  ICS_covW,
-                    S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "whiten")$gen_kurtosis !=
-                   ICS(X_rank_deficient, S1 = ICS_cov,
-                       S2 =  ICS_covW,
-                       S2_args = list(alpha = 1,
-                                      cf = 1/(ncol(X)+2)),
-                       algorithm = "QR")$gen_kurtosis) >= 1)
-
-  expect_equal(ics(X, S1 = cov, S2 = cov4, stdB = "Z",
-                   stdKurt = FALSE)@gKurt,
-               as.vector(ICS(X_rank_deficient, S1 = ICS_cov,
-                             S2 =  ICS_covW,
-                             S2_args = list(alpha = 1,
-                                            cf = 1/(ncol(X)+2)),
-                             algorithm = "QR")$gen_kurtosis))
+    expect_equal(ics(X, S1 = cov, S2 = cov4, stdB = "Z",
+                     stdKurt = FALSE)@gKurt,
+                 as.vector(ICS(X_rank_deficient, S1 = ICS_cov,
+                               S2 =  ICS_covW,
+                               S2_args = list(alpha = 1,
+                                              cf = 1/(ncol(X)+2)),
+                               algorithm = "QR")$gen_kurtosis))
+  }
 
 })
 
