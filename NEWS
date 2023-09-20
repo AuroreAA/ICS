@@ -2,7 +2,8 @@ LOG of the CHANGES in the package ICS
 
 Version 1.4-1
 
-* fixing a mistage in the documentation
+* fixing a mistake in the documentation
+* bugfix in summary() method of class ICS so that it doesn't call print()
 
 Version 1.4-0
 
