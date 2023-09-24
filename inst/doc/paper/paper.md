@@ -36,7 +36,7 @@ affiliations:
 
 # Summary
 
-Describe the functionality of the add-on package `ICS` [@ICS] for the statistical computing environment `R` [@RCore], similarly to the `DESCRIPTION` file.
+Describe the functionality of the add-on package `ICS` [@ICS] for the statistical computing environment `R` [@RCore], similarly to the `DESCRIPTION` file. Also mention that this paper addresses recent developments while a paper on an older version of the package has already been published [@nordhausen2008].
 
 
 # Statement of need
@@ -46,7 +46,7 @@ Outline the new developments: more flexible main function `ICS()`, numerically m
 
 # Related software
 
-Describe related packages such as `ICSOutlier` and `ICSClust`.
+Describe related packages such as `ICSOutlier` [@archimbaud2018] and `ICSClust` [@ICSClust].
 
 
 # Examples
@@ -56,6 +56,6 @@ Illustrate how to use the new functions as well as the advantages of the QR algo
 
 # Acknowledgements
 
-This work was partly supported by a grant of the \emph{Dutch Research Council} (NWO, research program Vidi, project number VI.Vidi.195.141), by the Austrian Science Fund P31881-N32, by the HiTEc COST Action (CA21163), and by the French \emph{Agence Nationale de la Recherche} under grant ANR-17-EURE-0010 (Investissements d'Avenir program).
+This work was partly supported by a grant of the Dutch Research Council (NWO, research program Vidi, project number VI.Vidi.195.141), by the Austrian Science Fund P31881-N32, by the HiTEc COST Action (CA21163), and by the French Agence Nationale de la Recherche under grant ANR-17-EURE-0010 (Investissements d'Avenir program).
 
 # References
