@@ -143,23 +143,23 @@ test_that("ics2 - S1 and S2 are functions - QR", {
                    S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "standard")$gen_kurtosis)
 
   # ICS with QR: it requires LAPACK version 3.11.0
-  # if(La_version() == "3.11.0"){
-  #   expect_true(sum(ICS(X_rank_deficient, S1 = ICS_cov, S2 =  ICS_covW,
-  #                       S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "whiten")$gen_kurtosis !=
-  #                     ICS(X_rank_deficient, S1 = ICS_cov,
-  #                         S2 =  ICS_covW,
-  #                         S2_args = list(alpha = 1,
-  #                                        cf = 1/(ncol(X)+2)),
-  #                         algorithm = "QR")$gen_kurtosis) >= 1)
-  #
-  #   expect_equal(ics(X, S1 = cov, S2 = cov4, stdB = "Z",
-  #                    stdKurt = FALSE)@gKurt,
-  #                as.vector(ICS(X_rank_deficient, S1 = ICS_cov,
-  #                              S2 =  ICS_covW,
-  #                              S2_args = list(alpha = 1,
-  #                                             cf = 1/(ncol(X)+2)),
-  #                              algorithm = "QR")$gen_kurtosis))
-  # }
+  if(La_version() == "3.11.0"){
+    expect_true(sum(ICS(X_rank_deficient, S1 = ICS_cov, S2 =  ICS_covW,
+                        S2_args = list(alpha = 1, cf = 1/(ncol(X)+2)), algorithm = "whiten")$gen_kurtosis !=
+                      ICS(X_rank_deficient, S1 = ICS_cov,
+                          S2 =  ICS_covW,
+                          S2_args = list(alpha = 1,
+                                         cf = 1/(ncol(X)+2)),
+                          algorithm = "QR")$gen_kurtosis) >= 1)
+
+    expect_equal(ics(X, S1 = cov, S2 = cov4, stdB = "Z",
+                     stdKurt = FALSE)@gKurt,
+                 as.vector(ICS(X_rank_deficient, S1 = ICS_cov,
+                               S2 =  ICS_covW,
+                               S2_args = list(alpha = 1,
+                                              cf = 1/(ncol(X)+2)),
+                               algorithm = "QR")$gen_kurtosis))
+  }
 
 })
 
