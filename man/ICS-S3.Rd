@@ -176,7 +176,8 @@ or \code{\link[stats]{cov}()}, and if \code{S2} is one of
 \code{\link{covW}()}, or \code{\link{covAxis}()}.
 For other scatter pairs, the QR algorithm is not
 applicable.   See Archimbaud et al. (2023)
-for details.
+for details. Note that the QR algorithm requires \proglang{LAPACK} version
+\eqn{\geq}{>=} 3.11.0 to attain better numerical stability.
 }
 
 The "whiten" algorithm is the most natural version and therefore the default. The option "standard"

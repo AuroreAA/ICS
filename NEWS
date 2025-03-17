@@ -1,5 +1,10 @@
 LOG of the CHANGES in the package ICS
 
+Version 1.4-2
+
+* commenting out tests that were conditional on a specific version of LAPACK
+* pointing out in help file of function ICS that the QR algorithm requires LAPACK version >= 3.11.0 to attain better numerical stability
+
 Version 1.4-1
 
 * fixing a mistake in the documentation
